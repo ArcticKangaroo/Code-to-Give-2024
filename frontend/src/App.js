@@ -38,6 +38,10 @@ function App() {
               path="/events" 
               element={<Event />} 
             />
+            <Route 
+              path="/home" 
+              element={<Admin />} 
+            />
           </Routes>
         </div>
       </BrowserRouter>
