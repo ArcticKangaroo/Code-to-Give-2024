@@ -9,17 +9,23 @@ import Navbar from './components/Navbar'
 import Event from './pages/Event'
 import Profile from './pages/Profile'
 import Admin from './pages/Admin'
+import Quizzes from './pages/Quizzes'
+import TrainingPage from './pages/Training'
 
 function App() {
   const { user } = useAuthContext()
 
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
         <Navbar />
         <div className="pages">
           <Routes>
-          <Route 
+            <Route 
+              path="/home" 
+              element={user ? <Admin /> : <Navigate to="/login" />} 
+            />
+            <Route 
               path="/" 
               element={user ? <Home /> : <Navigate to="/login" />} 
             />
@@ -39,9 +45,17 @@ function App() {
               path="/events" 
               element={<Event />} 
             />
-            <Route 
+            <Route
               path="/profile" 
               element={<Profile />} 
+            />
+            <Route
+              path="/quizzes" 
+              element={<Quizzes />} 
+            />
+            <Route
+              path="/training"
+              element={<TrainingPage/>}
             />
           </Routes>
         </div>
