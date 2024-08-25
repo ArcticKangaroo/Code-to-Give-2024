@@ -39,9 +39,9 @@ const WorkoutDetails = ({ workout, setSelectedWorkout }) => {
         alignItems="center"
         justifyContent="space-between"
         flexDirection={"column"}
+        width={"100%"}
         style={{
           padding: "16px",
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
           borderRadius: "8px",
         }}
         onClick={handleEditClick}
